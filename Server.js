@@ -46,7 +46,7 @@ app.use("/", async (req, res) => {
   console.log(req.query);
 
   var array = await req.query.asins.split(",");
-  var country = req.query.country;
+
   console.log(req.query.country);
   // console.log(array);
 
@@ -57,7 +57,7 @@ app.use("/", async (req, res) => {
     const params = {
       api_key: "19D50C4A0BE04AD894AD426DCC60B206",
       type: "product",
-      amazon_domain: `amazon.co.${req.query.country}`,
+      amazon_domain: `${req.query.country}`,
       asin: array[i],
     };
 
