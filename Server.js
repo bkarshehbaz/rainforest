@@ -59,6 +59,7 @@ app.use("/", async (req, res) => {
       type: "product",
       amazon_domain: `${req.query.country}`,
       asin: array[i],
+      customer_location=req.query.location,
     };
 
     axios
